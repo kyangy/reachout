@@ -3,7 +3,7 @@ FactoryGirl.define do
     username "kyangy"
 	name "Kevin"
 	email "kyang012@ucr.edu"
-	password_digest "password"
+	password "password"
   end
 
 end

@@ -26,5 +26,8 @@ RSpec.describe User, :type => :model do
 		expect(user).to be_invalid
 	end
 
-	it 'should have a password minimum length'
+	it 'should have a password minimum length' do
+		user = FactoryGirl.build(:user, password: 'sdffd')
+		expect(user).to be_invalid
+	end
 end
