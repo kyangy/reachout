@@ -9,6 +9,7 @@
 <% if logged_in? %>
 <h1><%= link_to "ReachOut", root_path %></h1>
 
+<%= link_to "Create an Event", new_event_path %>
 <%= link_to "Log Out", logout_path, method: :delete %>
 
 <% end %>
