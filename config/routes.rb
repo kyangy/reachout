@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  resources :events
+
   resources :users, only: [:create]
   get '/signup' => 'users#new', as: :signup
 
