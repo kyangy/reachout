@@ -1,0 +1,27 @@
+<h1>Edit your event!</h1>
+
+<%= form_for @event do |f| %>
+
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+	<div>
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+	</div>
+	<div>
+		<%= f.label :goal, "Volunteer Goal" %>
+		<%= f.text_field :goal %>
+	</div>
+	<div>
+		<%= f.label :duration, "Event Duration" %>
+		<%= f.text_field :duration %>
+	</div>
+	<%= f.submit "Update Event" %>
+
+<% end %>
