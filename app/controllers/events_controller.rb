@@ -9,7 +9,12 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		@event = Event.new(events_params)
+		@event = Event.new(event_params)
+		if @event.save
+			redirect_to events_path
+		else
+			render :new
+		end
 	end
 
 	def edit
@@ -28,7 +33,7 @@ class EventsController < ApplicationController
 
 	private
 
-	def events_params
-		params.require(:events).permit(:title, :description, :location, :goal, :duration)
+	def event_params
+		params.require(:event).permit(:title, :description, :location, :goal, :duration)
 	end
 end
