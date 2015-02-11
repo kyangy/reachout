@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :volunteer do
+  factory :user_event do
     
   end
 
