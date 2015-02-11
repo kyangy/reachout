@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'figaro'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
