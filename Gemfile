@@ -17,6 +17,7 @@ gem 'angular-rails-templates'
 gem 'angularjs-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'responders', '~> 2.0'
 
 gem 'carrierwave'
 gem 'carrierwave-video'

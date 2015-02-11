@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :events
+  namespace :api, defaults: {format: :json} do
+    resources :events
+  end
 
   resources :users, only: [:create]
   get '/signup' => 'users#new', as: :signup
