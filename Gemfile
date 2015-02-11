@@ -17,6 +17,10 @@ gem 'angular-rails-templates'
 gem 'angularjs-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.3'
+
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
