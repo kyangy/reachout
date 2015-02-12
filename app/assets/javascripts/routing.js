@@ -13,6 +13,12 @@
 				controller: 'MainController',
 				controllerAs: 'main'
 			})
+
+			.when('/events/new', {
+				templateUrl: 'new.html',
+				controller: 'MainController',
+				controllerAs: 'main'
+			})
 		};
 
 })();
