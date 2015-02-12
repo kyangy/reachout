@@ -5,4 +5,7 @@ class Event < ActiveRecord::Base
 	belongs_to :creator, class_name: "User"
 
 	mount_uploader :image, AvatarUploader
+
+	geocoded_by :full_street_address   # can also be an IP address
+	after_validation :geocode          # auto-fetch coordinates
 end

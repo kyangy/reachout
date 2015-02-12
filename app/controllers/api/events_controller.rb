@@ -2,7 +2,7 @@ module API
 	class EventsController < ApplicationController
 		protect_from_forgery with: :null_session
 
-		respond_to :json
+		respond_to :json, :html
 
 		def index
 			respond_with Event.all
@@ -10,6 +10,8 @@ module API
 
 		def show
 			respond_with Event.find(params[:id])
+			address = event.address
+			google_maps(address)
 		end
 
 		def create
