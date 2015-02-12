@@ -21,6 +21,7 @@
 			function addEvents(){
 				var newEvents = new EventResource();
 				newEvents.title = self.text;
+				newEvents.description = self.description;
 				newEvents.$save();
 
 				this.eventList.push(newEvents);
