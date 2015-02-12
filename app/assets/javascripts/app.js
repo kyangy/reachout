@@ -5,7 +5,6 @@
 			'templates',
 			'ngResource',
 			'ngRoute',									
-			'ipCookie'
 		]);
 
 })();
