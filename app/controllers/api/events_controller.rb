@@ -15,7 +15,7 @@ module API
 		def create
 			event = Event.new(event_params)
 			user = User.find(params[:user_id])
-			event.user = user
+			event.creator = user
 
 			if event.save
 				render json: event, status: 201
@@ -42,7 +42,7 @@ module API
 		private
 
 		def event_params
-			params.require(:event).permit(:title, :description, :location, :goal, :duration, :image)
+			params.require(:event).permit(:title, :description, :location, :goal, :duration, :image, :user_id)
 		end
 	end
 end

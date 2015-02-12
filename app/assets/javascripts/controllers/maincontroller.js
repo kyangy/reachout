@@ -8,12 +8,23 @@
 
 		function MainControllerFunc(Resources, ipCookie){
 			var self = this;
+			var EventResource = new Resources('events');
 			
 			self.id = ipCookie('id');
+			self.eventList = getEvents();
+			self.addEvents = addEvents;
 
-			var EventResource = new Resources('events');
+			function getEvents(){
+				return EventResource.query();
+			}
 
-			self.eventList = EventResource.query();	
+			function addEvents(){
+				var newEvents = new EventResource();
+				newEvents.title = self.text;
+				newEvents.$save();
+
+				this.eventList.push(newEvents);
+			}	
 		}	
 
 })();
