@@ -4,18 +4,16 @@
 		.module('ReachOutApp')
 		.controller('MainController', MainControllerFunc);
 
-		MainControllerFunc.$inject = ['$resource']
+		MainControllerFunc.$inject = ['Resources', 'ipCookie'];
 
-		function MainControllerFunc($resource){
+		function MainControllerFunc(Resources, ipCookie){
 			var self = this;
+			
+			self.id = ipCookie('id');
 
-			var events = $resource("http://localhost:3000/api/events/:id", {id: "@id"}, {'update': {method: 'PUT'}});
+			var EventResource = new Resources('events');
 
-			self.eventList = getEvents();
-
-			function getEvents(){
-				return events.query();
-			}
+			self.eventList = EventResource.query();	
 		}	
 
 })();

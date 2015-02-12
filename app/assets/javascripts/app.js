@@ -4,7 +4,8 @@
 		.module('ReachOutApp', [
 			'templates',
 			'ngResource',
-			'ngRoute',									
+			'ngRoute',
+			'ipCookie'									
 		]);
 
 })();
