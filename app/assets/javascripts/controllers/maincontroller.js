@@ -4,12 +4,15 @@
 		.module('ReachOutApp')
 		.controller('MainController', MainControllerFunc);
 
-		MainControllerFunc.$inject = ['Resources', 'ipCookie'];
+		MainControllerFunc.$inject = ['Resources', 'ipCookie', '$routeParams'];
 
-		function MainControllerFunc(Resources, ipCookie){
+		function MainControllerFunc(Resources, ipCookie, $routeParams){
 			var self = this;
 			var EventResource = new Resources('events');
 			
+			console.log(EventResource.get({id: $routeParams.id}));
+
+
 			self.id = ipCookie('id');
 			self.eventList = getEvents();
 			self.addEvents = addEvents;

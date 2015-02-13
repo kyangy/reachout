@@ -23,7 +23,7 @@
                   },
                   get:{
                     method: 'GET',
-                    params:{id: self.ipCookie}
+                    isArray: false
                   },
                   save: {
                     method: 'POST',
