@@ -9,7 +9,7 @@
     function Resources($resource, ipCookie, type){
 
         var Resource = function(type){
-
+            
             var self = this;
             self.ipCookie = ipCookie('id');             
 
@@ -35,7 +35,7 @@
                   }
                 });
 
-
+              
 
             return self.service;
         };      
