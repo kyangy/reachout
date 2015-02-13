@@ -9,16 +9,18 @@
 		function MainControllerFunc(Resources, ipCookie, $routeParams){
 			var self = this;
 			var EventResource = new Resources('events');
-			
-			console.log(EventResource.get({id: $routeParams.id}));
-
-
+	
 			self.id = ipCookie('id');
 			self.eventList = getEvents();
+			self.event = showEvent();
 			self.addEvents = addEvents;
 
 			function getEvents(){
 				return EventResource.query();
+			}
+
+			function showEvent(){
+				return EventResource.get({id: $routeParams.id});
 			}
 
 			function addEvents(){
