@@ -1,5 +1,7 @@
 module API
 	class EventsController < ApplicationController
+		include EventsHelper
+		
 		protect_from_forgery with: :null_session
 
 		respond_to :json, :html
@@ -10,8 +12,9 @@ module API
 
 		def show
 			respond_with Event.find(params[:id])
-			address = event.address
-			google_maps(address)
+			# @event = Event.find(params[:id])
+			# address = @event.address
+			# google_maps(address)
 		end
 
 		def create

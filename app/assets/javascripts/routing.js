@@ -19,6 +19,13 @@
 				controller: 'MainController',
 				controllerAs: 'main'
 			})
+
+			.when('/events/:id', {
+				templateUrl: 'show.html',
+				controller: 'MainController',
+				controllerAs: 'main'
+			})
+
 		};
 
 })();
