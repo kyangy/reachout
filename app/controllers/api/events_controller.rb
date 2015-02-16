@@ -19,7 +19,7 @@ module API
 
 		def create
 			event = Event.new(event_params)
-			user = current_user
+			user = User.find(params[:user_id])
 			event.creator = user
 			# puts user.username
 			# event = user.events.new(event_params)

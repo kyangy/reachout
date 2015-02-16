@@ -44,17 +44,35 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :test, :development do
+group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'better_errors'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'spring-commands-rspec'
+  gem 'shoulda'
+  gem 'faker'
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+group :development do
+  gem 'spirit_fingers'
+  gem 'coffee-rails-source-maps'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'meta_request'
+  gem 'pry-toys'
+  gem 'bullet'
+  gem 'guard-livereload'
+  gem 'terminal-notifier-guard'
+end
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 group :production do
 	gem 'rails_12factor'
