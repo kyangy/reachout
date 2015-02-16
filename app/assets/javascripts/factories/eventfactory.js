@@ -16,6 +16,7 @@
 			self.eventList = EventResource.query();
 			// self.event = showEvent();
 			self.addEvents = addEvents;
+			self.deleteEvent = deleteEvent;
 
 			// function showEvent(){
 			// 	return EventResource.get({id: $routeParams.id});
@@ -33,11 +34,15 @@
 				this.eventList.push(newEvents);
 			}
 
-			function deleteEvent(event, index){
-				var eventObj = {id: event};
-				EventResource.delete(eventObj);
-				self.eventList.splice(index, 1);
-			}	
+			function deleteEvent(EventResource){
+				EventResource.$delete();
+				self.eventList.splice(self.eventList.indexOf(EventResource), 1);
+			}
+			// self.destroy = function (event, index){
+			// 	var eventObj = {id: event};
+			// 	EventResource.delete(eventObj);
+			// 	self.eventList.splice(index, 1);
+			// }	
 		}
 
 		return Events;

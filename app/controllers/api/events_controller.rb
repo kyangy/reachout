@@ -24,6 +24,7 @@ module API
 
 			if event.save
 				render json: event, status: 201
+				redirect_to root_path
 			else
 				render json: {errors: event.errors}, status: 422
 			end
