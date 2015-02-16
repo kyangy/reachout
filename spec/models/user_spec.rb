@@ -4,7 +4,7 @@ RSpec.describe User, :type => :model do
   
 	describe "validations" do
 		it "should have a valid factory" do
-			u = build(:user)
+			u = FactoryGirl.build(:user)
 			expect(u.save).to eq true
 		end
 		it { should have_and_belong_to_many(:events) }
@@ -12,6 +12,20 @@ RSpec.describe User, :type => :model do
 		it { should validate_presence_of(:username) }
 		it { should validate_presence_of(:name) }
 		it { should validate_presence_of(:email) }
+	end
+
+	describe "test password authentication" do
+	  it "should be able to set a password" do
+	  	u = FactoryGirl.build(:user)
+	  	expect(u.respond_to?(:password)).to eq true
+	  end
+
+	  it "should be able to authenticate" do 
+	  	u = FactoryGirl.build(:user)
+	  	u.password = "password"
+	  	expect(u.authenticate("password")).to eq u
+	  	expect(u.authenticate("wrongpassword")).to eq false
+	  end
 	end
 
 	# it 'has a factory for user' do
