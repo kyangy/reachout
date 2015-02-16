@@ -1,6 +1,6 @@
 module API
 	class EventsController < ApplicationController
-		include EventsHelper
+		# include EventsHelper
 		
 		protect_from_forgery with: :null_session
 

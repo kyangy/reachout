@@ -1,13 +1,31 @@
 <h1>Create an Event!</h1>
 
 <div>
-	<span>Title:</span><input type="text" ng-model="main.text" />
+	<span>Title:</span><input type="text" ng-model="main.Event.text" />
 </div>
 
 <div>
-	<span>Description:</span><textarea type="text" ng-model="main.description"></textarea>
+	<span>Description:</span><textarea type="text" ng-model="main.Event.description"></textarea>
 </div>
 
+<div>
+	Date:
+	<input type="date" ng-model="main.Event.duration" />
+</div>
+
+<div>
+	Pledge Goal: 
+	<input type="number" min="1" ng-model="main.Event.goal" />
+</div>
+
+<div>
+	Hours:
+	<input type="number" min="1" />
+</div>
+
+<div>
+	<input type="file" ng-model="main.Event.image" />
+</div>
 <!-- <div>
 	<input type="text" ng-model="main.address" placeholder="Address" />
 </div> -->
@@ -21,7 +39,7 @@
 </div> -->
 
 
-<button ng-click="main.addEvents()">Create</button>	
+<button ng-click="main.Event.addEvents()">Create</button>	
 
  <script type="text/javascript">
     $(function () {

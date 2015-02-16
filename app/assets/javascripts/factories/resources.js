@@ -4,7 +4,7 @@
         .module('ReachOutApp')
         .factory('Resources', Resources);
 
-        Resources.$inject = ["$resource", 'ipCookie'];
+    Resources.$inject = ["$resource", 'ipCookie'];
 
     function Resources($resource, ipCookie, type){
 
@@ -23,7 +23,7 @@
                   },
                   get:{
                     method: 'GET',
-                    isArray: false
+                    isArray: true
                   },
                   save: {
                     method: 'POST',

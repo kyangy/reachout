@@ -2,11 +2,11 @@
 
 	angular
 		.module('ReachOutApp')
-		.controller('MainController', MainControllerFunc);
+		.controller('MainController', MainController);
 
-		MainControllerFunc.$inject = ['EventsFactory', 'ipCookie'];
+		MainController.$inject = ['EventsFactory', 'ipCookie'];
 
-		function MainControllerFunc(EventsFactory, ipCookie){
+		function MainController(EventsFactory, ipCookie){
 			var self = this;
 	
 			self.Event = new EventsFactory();
