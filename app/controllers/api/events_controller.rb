@@ -19,12 +19,14 @@ module API
 
 		def create
 			event = Event.new(event_params)
-			user = User.find(params[:user_id])
+			user = current_user
 			event.creator = user
+			# puts user.username
+			# event = user.events.new(event_params)
 
 			if event.save
 				render json: event, status: 201
-				redirect_to root_path
+				# redirect_to root_path
 			else
 				render json: {errors: event.errors}, status: 422
 			end
