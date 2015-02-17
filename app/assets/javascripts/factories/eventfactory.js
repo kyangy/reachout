@@ -16,11 +16,16 @@
 
 			self.eventList = EventResource.query();
 			// self.event = showEvent();
+
+			if ($routeParams.id){
+				self.event = EventResource.get({id: $routeParams.id})		
+			};
+				
 			self.addEvents = addEvents;
 			self.addVolunteer = addVolunteer;
 			// self.deleteEvent = deleteEvent;
 
-			// function showEvent(){
+			// self.showEvent = function(){
 			// 	return EventResource.get({id: $routeParams.id});
 			// }
 
