@@ -60,7 +60,7 @@ module API
 		private
 
 		def event_params
-			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :user_id)
+			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :hours, :user_id)
 		end
 	end
 end
