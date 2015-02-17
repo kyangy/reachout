@@ -26,6 +26,12 @@
 				controllerAs: 'main'
 			})
 
+			.when('/profile', {
+				templateUrl: 'profile.html',
+				controller: 'MainController',
+				controllerAs: 'main'
+			})
+
 		};
 
 })();

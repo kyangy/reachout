@@ -12,10 +12,8 @@
 			var self = this;
 
 			var EventResource = new Resources('events');
-			// var ShowResource = new QueryResources('events');
 
 			self.eventList = EventResource.query();
-			// self.event = showEvent();
 
 			if ($routeParams.id){
 				self.event = EventResource.get({id: $routeParams.id})		
@@ -23,11 +21,6 @@
 				
 			self.addEvents = addEvents;
 			self.addVolunteer = addVolunteer;
-			// self.deleteEvent = deleteEvent;
-
-			// self.showEvent = function(){
-			// 	return EventResource.get({id: $routeParams.id});
-			// }
 
 			function addVolunteer(){
 				$http.post("http://localhost:3000/api/volunteers" , 
@@ -48,10 +41,6 @@
 				this.eventList.push(newEvents);
 			}
 
-			// function deleteEvent(EventResource){
-			// 	EventResource.$delete();
-			// 	self.eventList.splice(self.eventList.indexOf(EventResource), 1);
-			// }
 			self.destroy = function(event, index){
 				var eventObj = {id: event};
 				EventResource.$delete(eventObj);
