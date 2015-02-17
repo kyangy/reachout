@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :events
+    get '/profile' => 'users#show'
     post '/volunteers' => 'events#add_volunteer'
   end
 
