@@ -14,13 +14,13 @@
 			var EventResource = new Resources('events');
 
 			self.eventList = EventResource.query();
-			// self.event = showEvent();
+			self.event = showEvent();
 			self.addEvents = addEvents;
 			self.deleteEvent = deleteEvent;
 
-			// function showEvent(){
-			// 	return EventResource.get({id: $routeParams.id});
-			// }
+			function showEvent(){
+				return EventResource.get({id: $routeParams.id});
+			}
 
 			function addEvents(){
 				var newEvents = new EventResource();
