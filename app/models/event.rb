@@ -11,7 +11,8 @@ class Event < ActiveRecord::Base
 	validates :description, presence: true
 	validates :location, presence: true
 	validates :goal, presence: true
-	validates :duration, presence: true
+	validates :date, presence: true
+	# validates :image, presence: true
 	# geocoded_by :address   # can also be an IP address
 	# after_validation :geocode          # auto-fetch coordinates
 end

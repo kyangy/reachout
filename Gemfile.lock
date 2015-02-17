@@ -478,6 +478,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.8.1)
   pg
   poltergeist
+  pry
   pry-toys
   rails (= 4.2.0)
   rails_12factor

@@ -1,5 +1,6 @@
 <h1>Create an Event!</h1>
 
+<form>
 <div>
 	<span>Title:</span><input type="text" ng-model="main.Event.text" />
 </div>
@@ -10,7 +11,7 @@
 
 <div>
 	Date:
-	<input type="date" ng-model="main.Event.duration" />
+	<input type="date" ng-model="main.Event.date" />
 </div>
 
 <div>
@@ -19,16 +20,19 @@
 </div>
 
 <div>
-	Hours:
-	<input type="number" min="1" />
+	<input type="text" ng-model="main.Event.location" placeholder="Address" />
 </div>
 
-<!-- <div>
-	<input type="file" ng-model="main.Event.image" />
+
+
+<!-- 
+<div>
+	Hours:
+	<input type="number" min="1" />
 </div> -->
 
 <!-- <div>
-	<input type="text" ng-model="main.address" placeholder="Address" />
+	<input type="file" ng-model="main.Event.image" />
 </div> -->
 
 <!-- <div class="form-group">

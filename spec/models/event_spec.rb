@@ -12,6 +12,7 @@ RSpec.describe Event, :type => :model do
 		it { should validate_presence_of(:description) }
 		it { should validate_presence_of(:location) }
 		it { should validate_presence_of(:goal) }
-		it { should validate_presence_of(:duration) }
+		it { should validate_presence_of(:date) }
+		# it { should validate_presence_of(:image) }
 	end
 end

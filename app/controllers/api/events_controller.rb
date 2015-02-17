@@ -18,13 +18,12 @@ module API
 		end
 
 		def create
-			event = Event.new(event_params)
 			user = User.find(params[:user_id])
-			event.user = user
-			
+			event = user.events.create(event_params)
+
+
 			if event.save
 				render json: event, status: 201
-				# redirect_to root_path
 			else
 				render json: {errors: event.errors}, status: 422
 			end
@@ -48,7 +47,7 @@ module API
 		private
 
 		def event_params
-			params.require(:event).permit(:title, :description, :location, :goal, :duration, :image, :user_id)
+			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :user_id)
 		end
 	end
 end

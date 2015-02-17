@@ -4,8 +4,8 @@ FactoryGirl.define do
 	description { Faker::Lorem.paragraph }
 	goal { Faker::Number.digit }
 	location "#{Faker::Address.city}, #{Faker::Address.state}"
-	duration { Faker::Date.forward(23) }
-	image { Faker::Avatar.image }
+	date { Faker::Date.forward(23) }
+	image "some image path"
   end
 
 end

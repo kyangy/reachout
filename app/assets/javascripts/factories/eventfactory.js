@@ -26,9 +26,11 @@
 				var newEvents = new EventResource();
 				newEvents.title = self.text;
 				newEvents.description = self.description;
-				newEvents.duration = self.duration;
+				newEvents.date = self.date;
 				newEvents.goal = self.goal;
+				newEvents.location = self.location;
 				newEvents.image = self.image;
+				newEvents.user_id = self.ipCookie;
 				newEvents.$save();
 
 				this.eventList.push(newEvents);
