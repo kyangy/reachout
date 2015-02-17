@@ -21,7 +21,6 @@ module API
 			user = User.find(params[:user_id])
 			event = user.events.create(event_params)
 
-
 			if event.save
 				render json: event, status: 201
 			else

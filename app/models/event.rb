@@ -1,9 +1,6 @@
 class Event < ActiveRecord::Base
 
 	has_and_belongs_to_many :users
-	# has_many :users, through: :user_events
-	# has_many :user_events
-	# belongs_to :creator, class_name: "User"
 
 	mount_uploader :image, AvatarUploader
 
