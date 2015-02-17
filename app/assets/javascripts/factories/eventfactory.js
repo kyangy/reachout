@@ -4,22 +4,29 @@
 		.module('ReachOutApp')
 		.factory('EventsFactory', EventsFactory);
 
-	EventsFactory.$inject = ['Resources', '$http', '$routeParams'];
+	EventsFactory.$inject = ['Resources', '$http', '$routeParams', 'ipCookie'];
 
-	function EventsFactory(Resources, $http, $routeParams){
+	function EventsFactory(Resources, $http, $routeParams, ipCookie){
 
 		var Events = function(){
 			var self = this;
 
 			var EventResource = new Resources('events');
+			// var ShowResource = new QueryResources('events');
 
 			self.eventList = EventResource.query();
-			self.event = showEvent();
+			// self.event = showEvent();
 			self.addEvents = addEvents;
-			self.deleteEvent = deleteEvent;
+			self.addVolunteer = addVolunteer;
+			// self.deleteEvent = deleteEvent;
 
-			function showEvent(){
-				return EventResource.get({id: $routeParams.id});
+			// function showEvent(){
+			// 	return EventResource.get({id: $routeParams.id});
+			// }
+
+			function addVolunteer(){
+				$http.post("http://localhost:3000/api/volunteers" , 
+					{user_id: ipCookie('id'), event_id: $routeParams.id} ) 
 			}
 
 			function addEvents(){
@@ -40,9 +47,9 @@
 			// 	EventResource.$delete();
 			// 	self.eventList.splice(self.eventList.indexOf(EventResource), 1);
 			// }
-			function deleteEvent(event, index){
+			self.destroy = function(event, index){
 				var eventObj = {id: event};
-				EventResource.delete(eventObj);
+				EventResource.$delete(eventObj);
 				self.eventList.splice(index, 1);
 			}	
 		}

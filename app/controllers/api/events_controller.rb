@@ -18,8 +18,11 @@ module API
 		end
 
 		def create
+			# user = User.find(params[:user_id])
+			# event = user.events.create(event_params)
+			event = Event.new(event_params)
 			user = User.find(params[:user_id])
-			event = user.events.create(event_params)
+			event.creator = user
 
 			if event.save
 				render json: event, status: 201
@@ -41,6 +44,17 @@ module API
 			event = Event.find(params[:id])
 			event.destroy
 			head 204
+		end
+
+		def add_volunteer
+			volunteer = EventsUser.new
+			volunteer.user_id = params[:user_id]
+			volunteer.event_id = params[:event_id]
+			if volunteer.save
+				render json: volunteer, status: 201
+			else
+				render json: {errors: volunteer.errors}, status: 422
+			end
 		end
 
 		private

@@ -10,8 +10,8 @@
 
 			.when('/events', {
 				templateUrl: 'index.html',
-				controller: 'QueryController',
-				controllerAs: 'query'
+				controller: 'MainController',
+				controllerAs: 'main'
 			})
 
 			.when('/events/new', {
