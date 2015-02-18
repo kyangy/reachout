@@ -14,8 +14,10 @@
 
 			var ProfileResources = new Resources('users');
 		
-			self.getProfile = ProfileResources.get({id: $routeParams.id});
-
+			if ($routeParams.id) {
+				self.getProfile = ProfileResources.get({id: $routeParams.id});
+			}
+			
 		}
 
 		return Profiles;
