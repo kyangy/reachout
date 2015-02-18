@@ -3,3 +3,10 @@
 <p>{{main.Profile.getProfile.user_details.username}}</p>
 <p>{{main.Profile.getProfile.user_details.name}}</p>
 <p>{{main.Profile.getProfile.user_details.email}}</p>
+
+<h2>My ReachOut Events</h2>
+<div ng-repeat="created in main.Profile.getProfile.created">
+	<p>{{created.title}}</p>
+</div>
+
+<h2>Volunteering In</h2>
