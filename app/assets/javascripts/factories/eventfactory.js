@@ -16,7 +16,7 @@
 			self.eventList = EventResource.query();
 
 			if ($routeParams.id){
-				self.event = EventResource.get({id: $routeParams.id})		
+				self.event = EventResource.get({id: $routeParams.id});		
 			};
 				
 			self.addEvents = addEvents;

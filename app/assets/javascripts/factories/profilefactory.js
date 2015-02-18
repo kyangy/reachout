@@ -4,23 +4,17 @@
 		.module('ReachOutApp')
 		.factory('ProfilesFactory', ProfilesFactory)
 
-	ProfilesFactory.$inject = ['$resource'];
+	ProfilesFactory.$inject = ['Resources', 'ipCookie', '$routeParams'];
 
-	function ProfilesFactory(){
+	function ProfilesFactory(Resources, ipCookie, $routeParams){
 
 		var Profiles = function(){
 
 			var self = this;
 
-			var getProfile = $resource("http://localhost:3000/api/profile/:id", 
-				{id: "@id"} );
-
-			self.profileList = queryProfile();
-
-			function queryProfile(){
-				return getProfile.query();
-			}
-
+			var ProfileResources = new Resources('users');
+		
+			self.getProfile = ProfileResources.get({id: $routeParams.id});
 
 		}
 

@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 	has_many :users, through: :events_users
 	has_many :events_users
 	belongs_to :creator, class_name: "User"
+	
 	has_many :comments, dependent: :destroy
 
 	mount_uploader :image, AvatarUploader

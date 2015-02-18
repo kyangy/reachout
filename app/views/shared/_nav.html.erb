@@ -12,7 +12,7 @@
 
 <a href="#/events">Events</a>
 <a href="#/events/new">Create an Event</a>
-<a href="#/profile/1">My Profile</a>
+<a href="#/profile/<%= current_user.id %>">My Profile</a>
 <%= link_to "Log Out", logout_path, method: :delete %>
 
 <% end %>
