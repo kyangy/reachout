@@ -12,6 +12,8 @@
 			self.Event = new EventsFactory();
 			self.id = ipCookie('id');
 
+			// self.uploader = new FileUploader();
+
 		}	
 
 })();

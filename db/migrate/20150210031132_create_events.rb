@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :title, null: false
       t.string :description, null: false
       t.string :location, null: false
-      t.string :goal, null: false
+      t.integer :goal, null: false
       t.string :date, null: false
       t.string :image
 
