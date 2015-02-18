@@ -26,7 +26,7 @@
 				controllerAs: 'main'
 			})
 
-			.when('/profile', {
+			.when('/profile/:id', {
 				templateUrl: 'profile.html',
 				controller: 'MainController',
 				controllerAs: 'main'
