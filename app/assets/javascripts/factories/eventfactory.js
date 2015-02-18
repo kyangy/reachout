@@ -35,6 +35,8 @@
 				newEvents.goal = self.goal;
 				newEvents.location = self.location;
 				newEvents.image = self.image;
+				newEvents.short = self.short;
+				newEvents.hours = self.hours
 				newEvents.user_id = self.ipCookie;
 				newEvents.$save();
 

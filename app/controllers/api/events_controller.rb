@@ -14,6 +14,7 @@ module API
 			respond_with Event.find(params[:id])
 			event = Event.find(params[:id])
 			address = event.location
+			# binding.pry
 			google_maps(address)
 		end
 
@@ -60,7 +61,7 @@ module API
 		private
 
 		def event_params
-			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :hours, :geocode, :user_id)
+			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :hours, :short, :geocode, :user_id)
 		end
 	end
 end

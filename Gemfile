@@ -21,6 +21,7 @@ gem 'responders', '~> 2.0'
 
 gem 'carrierwave'
 gem 'carrierwave-video'
+gem 'angularjs-file-upload-rails', '~> 1.1.6'
 gem 'fog'
 gem 'mini_magick'
 gem 'figaro'
