@@ -1,7 +1,41 @@
-<h1>{{main.Event.event.title}}</h1>
+<div class="row">
+	<div class="col-md-offset-1">
+		<h1>{{main.Event.event.title}}</h1>
+	</div>
+</div>
 
-<iframe src="<%= @map %>"></iframe>
+<div class="row">
+	<div class="col-md-offset-1 col-md-6">
+		<img src="{{main.Event.event.image.url}}" width="600" height="400">
+		<h3>{{main.Event.event.short}}</h3>
+		<button class="btn btn-primary">Share this Event</button>
+	</div>
 
-<button ng-click="main.Event.addVolunteer()">Volunteer</button>
+	<div class="col-md-3 pledge-info">
+		<span>10</span>
+		<p>Pledged Volunteers</p>
+		<span>{{main.Event.event.goal}}</span>
+		<p>Volunteer Goal</p>
+		<span>{{main.Event.event.hours}}</span>
+		<p>Hours</p>
+		<button class="btn btn-success" ng-click="main.Event.addVolunteer()">Volunteer</button>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-6">
+		<h2>About this ReachOut</h2>
+		<p>{{main.Event.event.description}}</p>
+
+		<h2>Information</h2>
+		<p>{{main.Event.event.location}}</p>
+		<iframe src="<%= @map %>"></iframe>
+	</div>
+
+</div>
+
+
+
+
 
 <!-- <button ng-if="main.isUser" ng-click="main.Event.destroy(main.Event.event.id, $index)">Delete Event</button> -->
