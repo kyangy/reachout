@@ -6,7 +6,7 @@ module API
 		respond_to :json, :html
 
 		def show
-			@user =  User.find(params[:id])
+			@user = User.find(params[:id])
 			@events_created = Event.where(creator_id: @user.id)
 			@events_joined = EventsUser.where(user_id: @user.id)
 			respond_with joined: @events_joined, created: @events_created, user_details: @user

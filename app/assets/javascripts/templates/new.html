@@ -1,6 +1,5 @@
 <h1>Create an Event!</h1>
 
-
 <div>
 	Title:
 	<input type="text" ng-model="main.Event.text" />
@@ -36,15 +35,17 @@
 </div>
 
 <!-- <div>
-	<input type="file" nv-file-select uploader="uploader" />
+	<input type="file" nv-file-select uploader="main.uploader" />
 	<ul>
-		<li ng-repeat="item in uploader.queue">
-	                Name: <span ng-bind="item.file.name"></span><br/>
-	                <button ng-click="item.upload()">upload</button>
+		<li ng-repeat="item in main.uploader.queue">
+            Name: <span ng-bind="item.file.name"></span><br/>
 	    </li>
     </ul>
 </div> -->
 
+<!-- <input type="file" ng-model="main.Event.image"> -->
+
+<!-- <button ng-click="main.Event.addEvents()">Create</button>	 -->
 <button ng-click="main.Event.addEvents()">Create</button>	
 
 

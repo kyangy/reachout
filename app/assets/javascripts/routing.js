@@ -8,6 +8,10 @@
 
 			$routeProvider
 
+			.when('/', {
+				templateUrl: 'home.html'
+			})
+
 			.when('/events', {
 				templateUrl: 'index.html',
 				controller: 'MainController',
@@ -18,6 +22,7 @@
 				templateUrl: 'new.html',
 				controller: 'MainController',
 				controllerAs: 'main'
+				
 			})
 
 			.when('/events/:id', {

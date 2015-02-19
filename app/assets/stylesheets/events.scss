@@ -1,3 +1,25 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.kids {
+	background: image-url('kids.jpg') no-repeat center;
+	background-size: cover;
+	width: 100%;
+	height: 375px;
+	border-top: 1px solid black;
+}
+
+#event {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	#event-info {
+		display: inline-block;
+		margin-left: 10px;	
+	}
+	img {
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+}

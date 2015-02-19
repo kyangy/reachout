@@ -1,6 +1,22 @@
-<h1>ReachOut Events</h1>
+<div class="row">
+	<div class="col-md-12 kids">
+		
+	</div>
+</div>
 
-<div ng-repeat="events in main.Event.eventList">
-	<a href="/#/events/{{events.id}}"><img src="{{events.image.url}}" height="200" width="300"></a>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<h2>ReachOut Events</h2>
+		<div ng-repeat="events in main.Event.eventList">
+			<div id="event">
+				<a href="/#/events/{{events.id}}"><img src="{{events.image.url}}" width="450" height="350"></a>
+				<div id="event-info">
+					<h2>{{events.title}}</h2>
+					<p>{{events.short}}</p>
+					<p></p>
+				</div>
+			<div>
+		</div>
+	</div>
 </div>
 

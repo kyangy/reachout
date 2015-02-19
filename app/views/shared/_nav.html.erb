@@ -1,18 +1,48 @@
 <% if logged_in? == false %>
-<h1><%= link_to "ReachOut", root_path %></h1>
-
-
-<%= link_to "Sign Up", signup_path %>
-<%= link_to "Log In", login_path %>
-
+	<header>
+		<div id="nav-bar">
+			<div>
+				<h1 id="logo"><a href="/#/">ReachOut</a></h1>
+			</div>
+			<div id="sign-log">
+				<div>
+					<%= link_to "Sign Up", signup_path %>
+				</div>
+				<div>
+					<%= link_to "Log In", login_path %>
+				</div>
+			</div>
+		</div>
+	</header>
 <% end %>
 
 <% if logged_in? %>
-<h1><%= link_to "ReachOut", root_path %></h1>
-
-<a href="#/events">Events</a>
-<a href="#/events/new">Create an Event</a>
-<a href="#/profile/<%= current_user.id %>">My Profile</a>
-<%= link_to "Log Out", logout_path, method: :delete %>
-
+	<header>
+		<div id="nav-bar">
+				<div>
+					<h1 id="logo"><a href="/#/">ReachOut</a></h1>
+				</div>
+				<div id="nav-first">
+				<div>
+					<a href="#/events">Events</a>
+				</div>
+				<div>
+					<a href="#/events/new">Create an Event</a>
+				</div>
+			</div>
+			<div id="drop-menu">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				    Me
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li role="presentation"><a href="#/profile/<%= current_user.id %>">My Profile</a></li>
+				    <li role="presentation"><%= link_to "Edit Account", edit_user_path(current_user) %></li>
+				    <li role="presentation"><%= link_to "Log Out", logout_path, method: :delete %></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</header>
 <% end %>

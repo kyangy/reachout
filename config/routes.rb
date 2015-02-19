@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   namespace :api, defaults: {format: :json} do
-    resources :events
-    resources :comments
+    resources :events do 
+      resources :comments
+    end
     get '/users/:id' => 'users#show'
     post '/volunteers' => 'events#add_volunteer'
   end
 
-  resources :users, only: [:create]
+  resources :users, only: [:create, :edit, :update]
   get '/signup' => 'users#new', as: :signup
 
   get '/login' => 'sessions#new', as: :login

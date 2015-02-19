@@ -25,6 +25,8 @@ module API
 			user = User.find(params[:user_id])
 			event.creator = user
 
+			event.image = params[:file]
+
 			if event.save
 				render json: event, status: 201
 			else
@@ -58,9 +60,16 @@ module API
 			end
 		end
 
+		def add_comment
+			comment = Comment.new
+			comment.user_id = params[:user_id]
+			comment.event_id = params[:event_id]
+		end
+
 		private
 
 		def event_params
+			# params.permit(:title, :description, :location, :goal, :date, :image, :hours, :short, :geocode, :user_id, :file, :format)
 			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :hours, :short, :geocode, :user_id)
 		end
 	end
