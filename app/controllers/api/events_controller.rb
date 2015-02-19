@@ -24,8 +24,7 @@ module API
 			event = Event.new(event_params)
 			user = User.find(params[:user_id])
 			event.creator = user
-
-			event.image = params[:file]
+			# event.image = params[:file]
 
 			if event.save
 				render json: event, status: 201
@@ -69,7 +68,6 @@ module API
 		private
 
 		def event_params
-			# params.permit(:title, :description, :location, :goal, :date, :image, :hours, :short, :geocode, :user_id, :file, :format)
 			params.require(:event).permit(:title, :description, :location, :goal, :date, :image, :hours, :short, :geocode, :user_id)
 		end
 	end

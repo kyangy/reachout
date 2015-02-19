@@ -8,12 +8,13 @@ class Event < ActiveRecord::Base
 
 	mount_uploader :image, AvatarUploader
 
-	validates :title, presence: true
-	validates :description, presence: true
-	validates :location, presence: true
-	validates :goal, presence: true
-	validates :date, presence: true
+	# validates :title, presence: true
+	# validates :description, presence: true
+	# validates :location, presence: true
+	# validates :goal, presence: true
+	# validates :date, presence: true
 	
 	geocoded_by :location   # can also be an IP address
 	after_validation :geocode          # auto-fetch coordinates
 end
+

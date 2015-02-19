@@ -14,50 +14,60 @@
 			var EventResource = new Resources('events');
 
 			self.eventList = EventResource.query();
+			
 
 			if ($routeParams.id){
 				self.event = EventResource.get({id: $routeParams.id});		
 			};
 				
 			self.addEvents = addEvents;
-			self.addVolunteer = addVolunteer;
-			// self.newEvent = newEvent;
+			self.addVolunteer = addVolunteer;						
+			self.newEvents = new EventResource(); 
+			// self.uploader = new FileUploader({url: '/api/events'}, 
+			// 	{formData: {
+			// 		title: self.text,
+			// 		description: self.description,
+			// 		date: self.date,
+			// 		goal: self.goal,
+			// 		location: self.location,
+			// 		short: self.short,
+			// 		hours: self.hours,
+			// 		user_id: self.ipCookie				
+			// 	}}
+			// );
+	
+			// self.uploadFile = function(files){
+			// 	var fd = new FormData();
+			// 	fd.append("file", files[0]);
+
+			// 	$http.post("http://localhost:3000/api/events", fd, {
+			// 		withCredentials: true,
+			// 		headers: {'Content-Type': undefined},
+			// 		transformRequest: angular.identity
+			// 	})
+			// }
 
 			function addVolunteer(){
 				$http.post("http://localhost:3000/api/volunteers" , 
 					{user_id: ipCookie('id'), event_id: $routeParams.id} ) 
 			}
-
-			// function newEvent(){
-			// 	var newEvents = new EventResource();
-			// 	newEvents.image = self.image;
-			// 	newEvents.title = self.text;
-			// 	newEvents.description = self.description;
-			// 	newEvents.date = self.date;
-			// 	newEvents.goal = self.goal;
-			// 	newEvents.location = self.location;
-			// 	newEvents.short = self.short;
-			// 	newEvents.hours = self.hours
-			// 	newEvents.user_id = self.ipCookie;
-			// 	console.log("newEvent()", newEvents);
-
-			// 	return newEvents;
-			// }
+			
 
 			function addEvents(){
-				var newEvents = new EventResource();
-				newEvents.image = self.image;
-				newEvents.title = self.text;
-				newEvents.description = self.description;
-				newEvents.date = self.date;
-				newEvents.goal = self.goal;
-				newEvents.location = self.location;
-				newEvents.short = self.short;
-				newEvents.hours = self.hours
-				newEvents.user_id = self.ipCookie;
-				newEvents.$save();
+								
+				self.newEvents.title = self.text;
+				self.newEvents.description = self.description;
+				self.newEvents.date = self.date;
+				self.newEvents.goal = self.goal;
+				self.newEvents.location = self.location;
+				self.newEvents.short = self.short;
+				self.newEvents.hours = self.hours;
+				// self.newEvents.image = self.uploader
+				self.newEvents.user_id = self.ipCookie;
+				self.uploader.uploadAll();
+				self.newEvents.$save();
 
-				this.eventList.push(newEvents);
+				self.eventList.push(self.newEvents);
 				window.location.replace('#/events');
 			}
 

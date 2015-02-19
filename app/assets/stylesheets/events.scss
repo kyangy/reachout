@@ -53,3 +53,41 @@
 // .profile-name {
 // 	text-align: center;
 // }
+
+.new-title {
+	margin-bottom: 30px;
+}
+
+.new-section,
+.new-part {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 20px;
+	margin-top: 7px;	
+	h4 {
+		margin-bottom: 30px;
+	}
+	.new-input {
+		width: 500px;
+		border-radius: 10px;
+	}
+	textarea {
+		width: 500px;
+		height: 300px;
+		border-radius: 10px;
+	}
+	.title {
+		padding: 10px;
+	}
+}
+
+.new-part {
+	background-color: #EDEDED;
+}
+
+.new-section {
+	padding: 20px;
+}
+
+
