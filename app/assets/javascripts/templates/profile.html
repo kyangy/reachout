@@ -21,7 +21,11 @@
 	</div>
 </div>
 
-<h3>Volunteering In</h3>
-<div ng-repeat="joined in main.Profile.getProfile.joined">
-	<p>{{joined.event_id}}</p>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h3>Volunteering In</h3>
+		<div ng-repeat="joined in main.Profile.getProfile.joined">
+			<p>{{joined.event_id}}</p>
+		</div>
+	</div>
 </div>
