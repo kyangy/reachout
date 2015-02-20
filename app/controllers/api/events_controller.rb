@@ -22,9 +22,10 @@ module API
 			# user = User.find(params[:user_id])
 			# event = user.events.create(event_params)
 			event = Event.new(event_params)
-			user = User.find(params[:user_id])
+			#user = User.find(params[:user_id])
+			user = User.find(params[:user][:id])
 			event.creator = user
-			# event.image = params[:file]
+			event.image = params[:file]
 
 			if event.save
 				render json: event, status: 201

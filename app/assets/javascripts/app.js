@@ -5,8 +5,7 @@
 			'templates',
 			'ngResource',
 			'ngRoute',
-			'ipCookie',			
-			'angularFileUpload'									
+			'ipCookie'											
 		]);
 
 })();

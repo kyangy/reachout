@@ -18,3 +18,52 @@
 		text-align: center;
 	}
 }
+
+.static-info {
+	h1 {
+		font-size: 3.2em;
+	}
+	h2 { 
+		font-size: 2.2em;
+	}	
+}
+
+.static-info,
+.numbers {
+	padding: 30px;
+}
+
+.numbers h1 {
+	color: #6495ED;
+}
+
+.secondary {
+	background: image-url('hand.jpg') no-repeat center;
+	background-size: cover;
+	width: 100%;
+	height: 550px;
+	color: white;
+}
+
+.secondary-button {
+	margin-top: 250px;
+}
+
+.hand {
+	margin-top: 150px;
+	font-size: 3em;
+}
+
+.twitter {
+	background: image-url('twitter.jpg') no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+}
+
+.twitter-info {
+	color: white;
+	margin-top: 300px;
+	text-align: center;
+}
