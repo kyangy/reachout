@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
 	validates :location, presence: true
 	validates :goal, presence: true
 	validates :date, presence: true
-	validates :short, presence: true
+	validates :short, presence: true, length: {maximum: 40}
 	
 	geocoded_by :location   # can also be an IP address
 	after_validation :geocode          # auto-fetch coordinates

@@ -24,12 +24,12 @@
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
 		<h3>Volunteering In</h3>
-		<div class="col-md-offset-2 col-md-7">
+		<div class="col-md-offset-2 col-md-8">
 			<div ng-repeat="joined in main.Profile.getProfile.joined_events">
 				<div id="joined">
 					<a href="/#/events/{{joined.id}}"><img src="{{joined.image.url}}" width="300" height="250"></a>
 					<div id="joined-info">
-						<p>{{joined.title}}</p>
+						<h3><strong>{{joined.title}}</strong></h3>
 						<p>{{joined.short}}</p>
 						<p>{{joined.location}}</p>
 						<p>{{joined.date}}</p>
