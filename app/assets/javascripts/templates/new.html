@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-offset-4 col-md-4 new-title">
 		<h1 class="text-center">Create an Event!</h1>
-		<h4>Add an image, goal, and other important details.</h4>
+		<h4 class="text-center">Add an image, goal, and other important details.</h4>
 	</div>
 </div>
 
@@ -60,7 +60,7 @@
 		<div class="col-md-12">
 			<div class="new-part">
 				<h4 class="col-md-3 title">Hours:</h4>
-				<input type="number" ng-model="main.Event.hours" />
+				<input type="number" min="1" ng-model="main.Event.hours" />
 				<p>
 					This section will declare how many hours a volunteer will accumulate upon finishing the event. Hours will be checked off by the event creator after the duration of the event.
 				</p>
@@ -74,8 +74,7 @@
 			</div>
 		</div>
 
-		<!-- <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)" />	 -->
-
+		<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)" />	
 
 		<div class="col-md-8">
 			<button ng-click="main.Event.addEvents()" class="btn btn-success">Create</button>

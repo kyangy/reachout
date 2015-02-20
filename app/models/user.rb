@@ -1,12 +1,16 @@
 class User < ActiveRecord::Base
 
-	has_many :events, through: :user_events
+	has_many :events, through: :events_users
 	has_many :events_users
-	has_many :events, as: :creator
+	# has_many :events, as: :creator
 	
 	has_many :comments, dependent: :destroy
 
 	has_secure_password
+
+	def created_events 
+		Event.where(creator: self)
+	end
 
 	validates :username, presence: true, uniqueness: { case_sensitive: false }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }

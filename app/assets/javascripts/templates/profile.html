@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-md-offset-4 col-md-4 profile-name">
-		<h1>{{main.Profile.getProfile.user_details.username}}</h1>
-		<p>{{main.Profile.getProfile.user_details.name}}</p>
-		<span class="glyphicon glyphicon-envelope"> {{main.Profile.getProfile.user_details.email}}</span>
+		<h1>{{main.Profile.getProfile.username}}</h1>
+		<p>{{main.Profile.getProfile.name}}</p>
+		<span class="glyphicon glyphicon-envelope"> {{main.Profile.getProfile.email}}</span>
 	</div>
 </div>
 
@@ -10,8 +10,8 @@
 	<div class="col-md-offset-1 col-md-10">
 		<h3>My Events</h3>
 		<div id="profile-created">
-			<div ng-repeat="created in main.Profile.getProfile.created">
-				<div id="profile-info">
+			<div ng-repeat="created in main.Profile.getProfile.created_events">
+				<div id="created-info">
 					<a href="/#/events/{{created.id}}"><img src="{{created.image.url}}" width="300" height="250"></a>
 					<p>{{created.title}}</p>
 					<p>Created on: {{created.created_at}}</p>
@@ -24,8 +24,18 @@
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
 		<h3>Volunteering In</h3>
-		<div ng-repeat="joined in main.Profile.getProfile.joined">
-			<p>{{joined.event_id}}</p>
+		<div class="col-md-offset-2 col-md-7">
+			<div ng-repeat="joined in main.Profile.getProfile.joined_events">
+				<div id="joined">
+					<a href="/#/events/{{joined.id}}"><img src="{{joined.image.url}}" width="300" height="250"></a>
+					<div id="joined-info">
+						<p>{{joined.title}}</p>
+						<p>{{joined.short}}</p>
+						<p>{{joined.location}}</p>
+						<p>{{joined.date}}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
